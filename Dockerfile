@@ -41,7 +41,9 @@ RUN addgroup --gid 1000 siyuan && adduser --uid 1000 --ingroup siyuan --disabled
 
 ENV TZ=Asia/Shanghai
 ENV RUN_IN_CONTAINER=true
+ENV ACCESS_AUTH_CODE=123  # 这里设置授权码
+
 EXPOSE 6806
 
 USER siyuan
-ENTRYPOINT ["/opt/siyuan/kernel"]
+ENTRYPOINT ["/opt/siyuan/kernel", "--workspace=/siyuan/workspace/", "--accessAuthCode=$ACCESS_AUTH_CODE"]
