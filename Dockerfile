@@ -46,4 +46,4 @@ ENV ACCESS_AUTH_CODE=123
 EXPOSE 6806
 
 USER siyuan
-ENTRYPOINT ["/opt/siyuan/kernel", "--workspace=/siyuan/workspace/", "--accessAuthCode=$ACCESS_AUTH_CODE"]
+ENTRYPOINT sh -c "/opt/siyuan/kernel --workspace=/siyuan/workspace/ --accessAuthCode=$ACCESS_AUTH_CODE"
